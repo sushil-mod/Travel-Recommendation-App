@@ -53,22 +53,46 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Travel Recommendation </h1>
-      <div>text</div>
+      <h1> ✈️ Travel Recommendation </h1>
+      <p style={{ fontSize: "smaller" }}>
+        Checkout some of my favourate Exitng Travel destination
+      </p>
+
       <div>
         {placeslist.map((item) => (
-          <button key={item} onClick={() => onClickhandler(item)}>
+          <button
+            key={item}
+            onClick={() => onClickhandler(item)}
+            style={{
+              cursor: "pointer",
+              background: "#E5E7EB",
+              borderRadius: "0.5rem",
+              padding: "0.5rem  1rem",
+              border: "1px solid black",
+              margin: "1rem 0.3rem"
+            }}
+          >
             {item}
           </button>
         ))}
       </div>
       <hr />
-      <div>
-        <ul style={{ listStyle: "none" }}>
+      <div style={{ textAlign: "left" }}>
+        <ul style={{ paddingInlineStart: "0" }}>
           {places[country].map((place) => (
-            <li key={place.name}>
-              <div>{place.name}</div>
-              <div>{place.location}</div>
+            <li
+              key={place.name}
+              style={{
+                listStyle: "none",
+                padding: "1rem",
+                border: "1px solid #D1D5DB",
+                width: "70%",
+                margin: "1rem 0rem",
+                borderRadius: "0.5rem"
+              }}
+            >
+              <div style={{ fontSize: "larger" }}>{place.name}</div>
+              <div style={{ fontSize: "smaller" }}>{place.location}</div>
             </li>
           ))}
         </ul>
