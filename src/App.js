@@ -51,7 +51,7 @@ var places = {
     },
     {
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/66/Louvre_Museum_Wikimedia_Commons.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/5/53/Le_Louvre_-_Aile_Richelieu.jpg",
       name: " Louvre Museum",
       location: "Paris"
     },
