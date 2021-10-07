@@ -4,38 +4,60 @@ import "./styles.css";
 var places = {
   India: [
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/f/f0/Taj_Mahal_Front.JPG",
       name: "Taj mahal",
       location: "Agra,Uttar Pradesh"
     },
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/7/7c/Golden_Temple%2C_Amritsar_03.jpg",
       name: "The golden Temple",
       location: "Amritsar, Punjab"
     },
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/2/27/Kailash_Temple_%28Cave_16%29_in_Ellora_Caves.jpg",
       name: "The Ellora Caves",
       location: "Ellora, Maharashtra"
     }
   ],
   Spain: [
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/b/b7/Museo_Guggenheim_Bilbao._Zona_norte.jpg",
       name: "Guggenheim Musseum",
       location: " Bilbao"
     },
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/5/57/Generalife-Alhambra-3.jpg",
       name: "The Alhambra and Generalife Gardens",
       location: " Granada"
+    },
+    {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/2/26/%CE%A3%CE%B1%CE%B3%CF%81%CE%AC%CE%B4%CE%B1_%CE%A6%CE%B1%CE%BC%CE%AF%CE%BB%CE%B9%CE%B1_2941.jpg",
+      name: "La Sagrada Familia",
+      location: " Barcelona"
     }
   ],
   France: [
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/a/af/Tour_eiffel_at_sunrise_from_the_trocadero.jpg",
       name: "Eiffel Tower",
       location: "Paris"
     },
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/6/66/Louvre_Museum_Wikimedia_Commons.jpg",
       name: " Louvre Museum",
       location: "Paris"
     },
     {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/1/17/Vue_a%C3%A9rienne_du_domaine_de_Versailles_le_20_ao%C3%BBt_2014_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_29.jpg",
       name: "Palace of Versailles",
       location: "Versailles"
     }
@@ -77,9 +99,11 @@ export default function App() {
         ))}
       </div>
       <hr />
-      <div style={{ textAlign: "left" }}>
-        <ul style={{ paddingInlineStart: "0" }}>
-          {places[country].map((place) => (
+
+      <ul>
+        {places[country].map((place) => (
+          <div>
+            {" "}
             <li
               key={place.name}
               style={{
@@ -91,12 +115,27 @@ export default function App() {
                 borderRadius: "0.5rem"
               }}
             >
-              <div style={{ fontSize: "larger" }}>{place.name}</div>
-              <div style={{ fontSize: "smaller" }}>{place.location}</div>
+              <img
+                style={{
+                  width: "90%",
+                  borderRadius: "20px",
+                  margin: "auto",
+                  maxWidth: "120px",
+                  marginRight: "0rem",
+                  marginLeft: "0rem"
+                }}
+                src={place.image}
+              />
+
+              <div>
+                {" "}
+                <p style={{ fontSize: "larger" }}>{place.name}</p>
+                <p style={{ fontSize: "smaller" }}>{place.location}</p>
+              </div>
             </li>
-          ))}
-        </ul>
-      </div>
+          </div>
+        ))}
+      </ul>
     </div>
   );
 }
